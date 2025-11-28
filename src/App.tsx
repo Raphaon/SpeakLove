@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import { Toaster } from 'sonner';
+import { Toaster } from 'sonner@2.0.3';
 import './styles/mobile-se.css';
 import { Dashboard } from './components/Dashboard';
 import { Quiz } from './components/Quiz';
