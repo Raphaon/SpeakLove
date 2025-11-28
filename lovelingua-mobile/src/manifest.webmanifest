@@ -1,0 +1,9 @@
+{
+  "name": "LoveLingua",
+  "short_name": "LoveLingua",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6b4bff",
+  "theme_color": "#6b4bff",
+  "icons": []
+}

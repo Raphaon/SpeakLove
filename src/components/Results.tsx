@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { 
   Heart,
   Share2,
@@ -18,7 +18,7 @@ interface ResultsProps {
 }
 
 export function Results({ results }: ResultsProps) {
-  const navigate = useNavigate();
+  const history = useHistory();
   
   if (!results) {
     return (
@@ -28,7 +28,7 @@ export function Results({ results }: ResultsProps) {
           <h2 className="text-2xl font-bold text-gray-800 mb-2">Aucun résultat</h2>
           <p className="text-gray-600 mb-6">Passez le quiz pour découvrir votre langage d'amour !</p>
           <button
-            onClick={() => navigate('/quiz')}
+            onClick={() => history.push('/quiz')}
             className="px-6 py-3 bg-gradient-to-r from-pink-500 to-rose-400 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
           >
             Commencer le quiz
@@ -77,7 +77,7 @@ export function Results({ results }: ResultsProps) {
         <div className="max-w-3xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
           <div className="flex items-center justify-between">
             <button
-              onClick={() => navigate('/dashboard')}
+              onClick={() => history.push('/dashboard')}
               className="p-1.5 sm:p-2 hover:bg-pink-50 rounded-full transition-colors"
             >
               <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 text-pink-600" />
@@ -172,7 +172,7 @@ export function Results({ results }: ResultsProps) {
         {/* Actions */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
           <button
-            onClick={() => navigate('/suggestions')}
+            onClick={() => history.push('/suggestions')}
             className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-all text-left group"
           >
             <div className="flex items-center gap-3 sm:gap-4">
@@ -187,7 +187,7 @@ export function Results({ results }: ResultsProps) {
           </button>
 
           <button
-            onClick={() => navigate('/couple-comparison')}
+            onClick={() => history.push('/couple-comparison')}
             className="bg-white rounded-lg sm:rounded-xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-all text-left group"
           >
             <div className="flex items-center gap-3 sm:gap-4">
@@ -204,7 +204,7 @@ export function Results({ results }: ResultsProps) {
 
         {/* Home Button */}
         <button
-          onClick={() => navigate('/dashboard')}
+          onClick={() => history.push('/dashboard')}
           className="w-full py-3 sm:py-4 bg-gradient-to-r from-pink-500 to-rose-400 text-white rounded-lg sm:rounded-xl font-semibold text-base sm:text-lg flex items-center justify-center gap-1.5 sm:gap-2 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
           <Home className="w-5 h-5 sm:w-6 sm:h-6" />

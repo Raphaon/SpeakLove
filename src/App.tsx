@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { Toaster } from 'sonner@2.0.3';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import './styles/mobile-se.css';
 import { Dashboard } from './components/Dashboard';
 import { Quiz } from './components/Quiz';
@@ -136,18 +136,27 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/quiz" element={<Quiz onComplete={handleQuizComplete} />} />
-        <Route path="/results" element={<Results results={quizResults} />} />
-        <Route path="/suggestions" element={<Suggestions />} />
-        <Route path="/questions" element={<ConversationQuestions />} />
-        <Route path="/info" element={<InfoPage />} />
-        <Route path="/multiplayer" element={<MultiplayerLobby onGameStart={handleGameStart} />} />
-        <Route 
-          path="/multiplayer-game" 
-          element={
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <Route
+          path="/quiz"
+          render={() => <Quiz onComplete={handleQuizComplete} />}
+        />
+        <Route
+          path="/results"
+          render={() => <Results results={quizResults} />}
+        />
+        <Route path="/suggestions" component={Suggestions} />
+        <Route path="/questions" component={ConversationQuestions} />
+        <Route path="/info" component={InfoPage} />
+        <Route
+          path="/multiplayer"
+          render={() => <MultiplayerLobby onGameStart={handleGameStart} />}
+        />
+        <Route
+          path="/multiplayer-game"
+          render={() =>
             gameId && playerId ? (
               <MultiplayerGame
                 gameId={gameId}
@@ -156,51 +165,41 @@ export default function App() {
                 onLeave={handleLeaveGame}
               />
             ) : (
-              <Navigate to="/multiplayer" replace />
+              <Redirect to="/multiplayer" />
             )
-          } 
+          }
         />
-        <Route path="/history" element={<HistoryPage />} />
-        <Route path="/couple-setup" element={<CoupleSetup onCoupleLinked={handleCoupleLinked} />} />
-        <Route 
-          path="/couple-comparison" 
-          element={
-            coupleId ? (
-              <CoupleComparison coupleId={coupleId} />
-            ) : (
-              <Navigate to="/couple-setup" replace />
-            )
-          } 
+        <Route path="/history" component={HistoryPage} />
+        <Route
+          path="/couple-setup"
+          render={() => <CoupleSetup onCoupleLinked={handleCoupleLinked} />}
         />
-        <Route 
-          path="/lovelingu" 
-          element={
-            coupleId ? (
-              <LoveLingua coupleId={coupleId} />
-            ) : (
-              <Navigate to="/couple-setup" replace />
-            )
-          } 
+        <Route
+          path="/couple-comparison"
+          render={() =>
+            coupleId ? <CoupleComparison coupleId={coupleId} /> : <Redirect to="/couple-setup" />
+          }
         />
-        <Route 
-          path="/quest-history" 
-          element={
-            coupleId ? (
-              <QuestHistory coupleId={coupleId} />
-            ) : (
-              <Navigate to="/lovelingu" replace />
-            )
-          } 
+        <Route
+          path="/lovelingu"
+          render={() => (coupleId ? <LoveLingua coupleId={coupleId} /> : <Redirect to="/couple-setup" />)}
         />
-        <Route path="/profile-settings" element={<ProfileSettings />} />
-        <Route path="/wishlist" element={<SharedWishlist />} />
-        <Route path="/checkin" element={<EmotionalCheckIn />} />
-        <Route path="/coupons" element={<DigitalCoupons />} />
-        <Route path="/gratitude" element={<GratitudeWall />} />
-        <Route path="/partner-quiz" element={<PartnerQuizLobby onGameStart={handlePartnerQuizStart} />} />
-        <Route 
-          path="/partner-quiz-game" 
-          element={
+        <Route
+          path="/quest-history"
+          render={() => (coupleId ? <QuestHistory coupleId={coupleId} /> : <Redirect to="/lovelingu" />)}
+        />
+        <Route path="/profile-settings" component={ProfileSettings} />
+        <Route path="/wishlist" component={SharedWishlist} />
+        <Route path="/checkin" component={EmotionalCheckIn} />
+        <Route path="/coupons" component={DigitalCoupons} />
+        <Route path="/gratitude" component={GratitudeWall} />
+        <Route
+          path="/partner-quiz"
+          render={() => <PartnerQuizLobby onGameStart={handlePartnerQuizStart} />}
+        />
+        <Route
+          path="/partner-quiz-game"
+          render={() =>
             partnerQuizSessionId ? (
               <PartnerQuizGame
                 sessionId={partnerQuizSessionId}
@@ -209,25 +208,23 @@ export default function App() {
                 onFinish={handlePartnerQuizFinish}
               />
             ) : (
-              <Navigate to="/partner-quiz" replace />
+              <Redirect to="/partner-quiz" />
             )
-          } 
+          }
         />
-        <Route 
-          path="/partner-quiz-results" 
-          element={
+        <Route
+          path="/partner-quiz-results"
+          render={() =>
             partnerQuizSessionId ? (
-              <PartnerQuizResults
-                sessionId={partnerQuizSessionId}
-                partnerId={partnerQuizPartnerId}
-              />
+              <PartnerQuizResults sessionId={partnerQuizSessionId} partnerId={partnerQuizPartnerId} />
             ) : (
-              <Navigate to="/partner-quiz" replace />
+              <Redirect to="/partner-quiz" />
             )
-          } 
+          }
         />
-        <Route path="/user-profile" element={<UserProfile />} />
-      </Routes>
+        <Route path="/user-profile" component={UserProfile} />
+        <Redirect to="/" />
+      </Switch>
       <Toaster position="top-center" richColors />
     </BrowserRouter>
   );
