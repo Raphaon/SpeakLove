@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {
   Heart,
   Flame,
@@ -30,7 +30,7 @@ interface CoupleData {
 }
 
 export function Dashboard() {
-  const navigate = useNavigate();
+  const history = useHistory();
   
   const [coupleData, setCoupleData] = useState<CoupleData | null>(() => {
     try {
@@ -148,13 +148,13 @@ export function Dashboard() {
             </div>
             <div className="flex items-center gap-1 sm:gap-2">
               <button
-                onClick={() => navigate('/user-profile')}
+                onClick={() => history.push('/user-profile')}
                 className="p-1.5 sm:p-2 hover:bg-pink-50 rounded-full transition-colors"
               >
                 <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600" />
               </button>
               <button
-                onClick={() => navigate('/profile-settings')}
+                onClick={() => history.push('/profile-settings')}
                 className="p-1.5 sm:p-2 hover:bg-pink-50 rounded-full transition-colors"
               >
                 <Settings className="w-4 h-4 sm:w-5 sm:h-5 text-pink-600" />
@@ -227,7 +227,7 @@ export function Dashboard() {
         {coupleData && coupleData.status === 'linked' && (
           <div className="grid grid-cols-2 gap-2.5 sm:gap-4 mb-4 sm:mb-6">
             <button
-              onClick={() => navigate('/lovelingu')}
+              onClick={() => history.push('/lovelingu')}
               className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3.5 sm:p-6 hover:shadow-xl transition-all"
             >
               <HeartHandshake className="w-7 h-7 sm:w-10 sm:h-10 text-pink-500 mx-auto mb-2 sm:mb-3" />
@@ -245,7 +245,7 @@ export function Dashboard() {
             </button>
             
             <button
-              onClick={() => navigate('/lovelingu')}
+              onClick={() => history.push('/lovelingu')}
               className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-3.5 sm:p-6 hover:shadow-xl transition-all"
             >
               <Flame className="w-7 h-7 sm:w-10 sm:h-10 text-orange-500 mx-auto mb-2 sm:mb-3" />
@@ -263,7 +263,7 @@ export function Dashboard() {
         {/* Main Quiz CTA */}
         {!latestResult && (
           <button
-            onClick={() => navigate('/quiz')}
+            onClick={() => history.push('/quiz')}
             className="w-full bg-gradient-to-r from-pink-500 to-rose-400 text-white rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-4 sm:mb-6 shadow-lg hover:shadow-xl transition-all"
           >
             <div className="flex items-center gap-3 sm:gap-4">
@@ -288,7 +288,7 @@ export function Dashboard() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-2.5 sm:gap-4">
           {/* Partner Quiz */}
           <button
-            onClick={() => navigate('/partner-quiz')}
+            onClick={() => history.push('/partner-quiz')}
             className="bg-gradient-to-br from-pink-500 to-rose-400 text-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-lg hover:shadow-xl transition-all"
           >
             <div className="relative">
@@ -303,7 +303,7 @@ export function Dashboard() {
 
           {/* Questions */}
           <button
-            onClick={() => navigate('/questions')}
+            onClick={() => history.push('/questions')}
             className="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-lg hover:shadow-xl transition-all"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2 sm:mb-3">
@@ -316,7 +316,7 @@ export function Dashboard() {
           {/* Quiz Principal */}
           {latestResult && (
             <button
-              onClick={() => navigate('/quiz')}
+              onClick={() => history.push('/quiz')}
               className="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-lg hover:shadow-xl transition-all"
             >
               <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-2 sm:mb-3">
@@ -329,7 +329,7 @@ export function Dashboard() {
 
           {/* Suggestions */}
           <button
-            onClick={() => navigate('/suggestions')}
+            onClick={() => history.push('/suggestions')}
             className="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-lg hover:shadow-xl transition-all"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-2 sm:mb-3">
@@ -341,7 +341,7 @@ export function Dashboard() {
 
           {/* LoveLingua */}
           <button
-            onClick={() => navigate('/lovelingu')}
+            onClick={() => history.push('/lovelingu')}
             className="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-lg hover:shadow-xl transition-all"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-2 sm:mb-3">
@@ -353,7 +353,7 @@ export function Dashboard() {
 
           {/* Info */}
           <button
-            onClick={() => navigate('/info')}
+            onClick={() => history.push('/info')}
             className="bg-white rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-lg hover:shadow-xl transition-all"
           >
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-100 flex items-center justify-center mx-auto mb-2 sm:mb-3">
