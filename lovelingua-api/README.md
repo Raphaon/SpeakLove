@@ -7,6 +7,12 @@ Squelette d'API REST conforme au cahier des charges : Express, SQLite, validatio
 - `npm run build` : compilation TypeScript.
 - `npm start` : exécution du build.
 
+## Configuration
+- Copiez `.env.example` en `.env` et ajustez :
+  - `PORT` : port HTTP (par défaut 3000)
+  - `SQLITE_PATH` : chemin du fichier SQLite (sera créé si absent)
+  - `CORS_ORIGIN` : origine autorisée pour l'app mobile/web
+
 ## Points d'entrée
 - `src/server.ts` : bootstrap Express + middlewares (Helmet, CORS, JSON, logs).
 - `src/routes/couples.routes.ts` : création/rejoindre un couple (stubs SQLite à compléter).

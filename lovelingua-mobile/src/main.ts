@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { AppComponent } from './app/app.component';
 import { appRoutes } from './app/app.routes';
-import { environment } from './app/environment';
+import { environment } from './environments/environment';
 
 if (environment.production) {
   enableProdMode();

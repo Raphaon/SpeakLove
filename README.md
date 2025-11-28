@@ -1,11 +1,22 @@
 
-  # Love Languages App
+  # Love Languages App / LoveLingua Monorepo
 
-  This is a code bundle for Love Languages App. The original project is available at https://www.figma.com/design/zwrn1WYCMa5K3LdfzC04b8/Love-Languages-App.
+  Ce dépôt contient :
+  - l'app web React/Vite (racine) utilisée pour les premières expérimentations,
+  - un squelette mobile **Ionic/Angular** dans `lovelingua-mobile` (conforme au cahier des charges Android/Capacitor),
+  - un squelette **API Node.js + SQLite** dans `lovelingua-api`.
 
-  ## Running the code
+  ## App web (racine)
+  - `npm install` puis `npm run dev` pour démarrer Vite.
+  - `npm run build` pour générer le bundle (sortie `build/`).
 
-  Run `npm i` to install the dependencies.
+  ## Mobile Ionic/Angular
+  1. `cd lovelingua-mobile && npm install`.
+  2. Configurez `src/environments/environment.ts` (`apiBaseUrl`) pour le backend local.
+  3. `npm run start` pour lancer l'app ; `npm run android` pour synchroniser le projet Capacitor.
 
-  Run `npm run dev` to start the development server.
+  ## API Node.js / SQLite
+  1. `cd lovelingua-api && npm install`.
+  2. Démarrez en dev avec `npm run dev` (ts-node-dev) ou générez via `npm run build` puis `npm start`.
+  3. Ajoutez un fichier `.env` (voir `lovelingua-api/.env.example`) pour définir le port et le chemin SQLite.
   

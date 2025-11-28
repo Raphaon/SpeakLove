@@ -21,9 +21,13 @@ Ce dossier contient un squelette prêt à étendre pour l'application mobile Lov
 
 ## Étapes de prise en main
 1. `cd lovelingua-mobile` puis `npm install` (offline-ready si le cache est disponible).
-2. `npm run start` pour lancer l'UI.
-3. `npm run android` pour générer/synchroniser le projet Android.
-4. Connecter les services à l'API Node (voir `core/services`).
+2. Configurez l'API cible :
+   - `src/environments/environment.ts` pour le mode dev/local (`apiBaseUrl` par défaut sur `http://localhost:3000`).
+   - `src/environments/environment.prod.ts` pour la build prod (`https://api.lovelingua.app` par défaut).
+   - La configuration de build Angular remplace automatiquement le fichier d'environnement en production.
+3. `npm run start` pour lancer l'UI.
+4. `npm run android` pour générer/synchroniser le projet Android.
+5. Connecter les services à l'API Node (voir `core/services`).
 
 ## Notes
 - Les services utilisent des hooks placeholders pour SQLite via Capacitor (`@capacitor-community/sqlite`) et Ionic Storage : implémentez les appels réels selon votre plugin.

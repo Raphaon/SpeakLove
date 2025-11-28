@@ -2,6 +2,8 @@ node_modules
 .dist
 build
 dist
+*.db
+lovelingua-api/data
 .env
 .env.*
 .DS_Store
