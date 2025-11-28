@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { ArrowLeft, Heart, CheckCircle } from 'lucide-react';
 import { quizQuestions } from '../data/quizQuestions';
 import { saveTestResult, TestResult, getUserId, getCoupleId } from '../utils/storage';
@@ -21,7 +21,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function Quiz({ onComplete }: QuizProps) {
-  const navigate = useNavigate();
+  const history = useHistory();
 
   const selectedQuestions = useMemo(() => {
     const shuffled = shuffleArray(quizQuestions);
@@ -97,7 +97,7 @@ export function Quiz({ onComplete }: QuizProps) {
       toast.success('🎉 Quiz complété ! +100 XP');
 
       setTimeout(() => {
-        navigate('/results');
+        history.push('/results');
       }, 500);
     }
   };
@@ -131,7 +131,7 @@ export function Quiz({ onComplete }: QuizProps) {
         <div className="max-w-3xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
           <div className="flex items-center justify-between">
             <button
-              onClick={() => navigate('/dashboard')}
+              onClick={() => history.push('/dashboard')}
               className="p-1.5 sm:p-2 hover:bg-pink-50 rounded-full transition-colors"
             >
               <ArrowLeft className="w-5 h-5 sm:w-6 sm:h-6 text-pink-600" />
