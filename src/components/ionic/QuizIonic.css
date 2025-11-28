@@ -1,0 +1,324 @@
+/* Quiz Ionic - Responsive Design */
+
+.quiz-content {
+  --background: linear-gradient(135deg, #FFF5F7 0%, #FFE4E8 50%, #FFF5F7 100%);
+}
+
+/* Hide scrollbar */
+.quiz-content::part(scroll) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.quiz-content::part(scroll)::-webkit-scrollbar {
+  display: none;
+}
+
+.quiz-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(1rem, 3vh, 1.5rem) clamp(1rem, 4vw, 1.5rem);
+  padding-bottom: clamp(1.5rem, 4vh, 2rem);
+}
+
+.question-card {
+  margin: clamp(0.75rem, 2vh, 1rem) 0 clamp(1.5rem, 4vh, 2rem) 0;
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.15);
+  border-radius: clamp(1rem, 3vw, 1.5rem);
+}
+
+.question-card ion-card-content {
+  padding: clamp(1.25rem, 4vw, 1.5rem);
+}
+
+.question-number {
+  font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
+  color: #E91E63;
+  font-weight: 600;
+  margin-bottom: clamp(0.75rem, 2vh, 1rem);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.question-text {
+  font-size: clamp(1.0625rem, 3vw, 1.25rem);
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.options-list {
+  padding: 0;
+  margin: 0 0 clamp(1.5rem, 4vh, 2rem) 0;
+  background: transparent;
+}
+
+.option-item {
+  --background: #ffffff;
+  --border-radius: clamp(0.875rem, 2.5vw, 1rem);
+  --padding-start: clamp(12px, 3vw, 16px);
+  --padding-end: clamp(12px, 3vw, 16px);
+  --inner-padding-end: clamp(12px, 3vw, 16px);
+  --min-height: clamp(68px, 15vw, 80px);
+  margin-bottom: clamp(10px, 2.5vh, 12px);
+  border-radius: clamp(0.875rem, 2.5vw, 1rem);
+  box-shadow: 0 2px 8px rgba(233, 30, 99, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.option-item:active {
+  transform: scale(0.98);
+}
+
+.option-item.selected {
+  --background: #FFE4E8;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.25);
+  border: 2px solid #E91E63;
+}
+
+.option-item ion-label {
+  font-size: clamp(0.9375rem, 2.5vw, 1rem);
+  line-height: 1.5;
+  color: #1a1a1a;
+  margin: clamp(10px, 2.5vh, 12px) 0;
+  white-space: normal;
+}
+
+.option-item ion-radio {
+  margin-right: clamp(0.5rem, 2vw, 0.75rem);
+}
+
+.submit-button {
+  --border-radius: clamp(0.875rem, 2.5vw, 1rem);
+  --padding-top: clamp(14px, 3vh, 16px);
+  --padding-bottom: clamp(14px, 3vh, 16px);
+  --box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+  margin: clamp(1.5rem, 4vh, 2rem) 0 clamp(0.75rem, 2vh, 1rem) 0;
+  font-size: clamp(1rem, 2.8vw, 1.125rem);
+  height: auto;
+  min-height: clamp(48px, 12vw, 56px);
+}
+
+.submit-button:active {
+  transform: scale(0.98);
+}
+
+.progress-text {
+  text-align: center;
+  font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
+  color: #666;
+  margin-top: clamp(0.75rem, 2vh, 1rem);
+  padding: 0 1rem;
+}
+
+/* Progress Bar Container */
+.progress-container {
+  padding: clamp(0.75rem, 2vh, 1rem) clamp(1rem, 4vw, 1.5rem);
+}
+
+.progress-container ion-progress-bar {
+  height: clamp(6px, 1.5vw, 8px);
+  border-radius: clamp(3px, 1vw, 4px);
+}
+
+/* Responsive Adjustments */
+
+/* Extra Small Devices (iPhone SE, small phones) */
+@media (max-width: 375px) {
+  .quiz-container {
+    padding: 1rem 0.75rem 1.25rem;
+  }
+
+  .question-card {
+    margin: 0.5rem 0 1.25rem 0;
+  }
+
+  .question-text {
+    font-size: 1rem;
+  }
+
+  .option-item {
+    --min-height: 64px;
+    margin-bottom: 8px;
+  }
+
+  .option-item ion-label {
+    font-size: 0.875rem;
+  }
+
+  .submit-button {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Small Devices (standard phones) */
+@media (min-width: 376px) and (max-width: 576px) {
+  .quiz-container {
+    padding: 1.125rem 1rem 1.5rem;
+  }
+
+  .question-text {
+    font-size: 1.0625rem;
+  }
+
+  .option-item {
+    --min-height: 70px;
+  }
+
+  .option-item ion-label {
+    font-size: 0.9375rem;
+  }
+}
+
+/* Medium Devices (large phones, small tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .quiz-container {
+    padding: 1.25rem 1.25rem 1.75rem;
+  }
+
+  .question-card {
+    border-radius: 1.25rem;
+  }
+
+  .option-item {
+    --min-height: 75px;
+  }
+}
+
+/* Large Devices (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .quiz-container {
+    padding: 1.5rem 2rem 2rem;
+  }
+
+  .question-card {
+    margin: 1rem 0 2rem 0;
+  }
+
+  .question-text {
+    font-size: 1.375rem;
+  }
+
+  .option-item {
+    --min-height: 85px;
+  }
+
+  .option-item ion-label {
+    font-size: 1.0625rem;
+  }
+}
+
+/* Extra Large Devices (desktop) */
+@media (min-width: 1025px) {
+  .quiz-container {
+    padding: 2rem 2.5rem 2.5rem;
+  }
+
+  .question-card {
+    margin: 1.25rem 0 2.5rem 0;
+  }
+
+  .question-text {
+    font-size: 1.5rem;
+  }
+
+  .option-item {
+    --min-height: 90px;
+  }
+
+  .option-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(233, 30, 99, 0.2);
+  }
+
+  .option-item.selected:hover {
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+  }
+
+  .submit-button:hover {
+    transform: translateY(-2px);
+    --box-shadow: 0 6px 16px rgba(233, 30, 99, 0.4);
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .quiz-container {
+    padding: 0.75rem 1rem 1rem;
+  }
+
+  .question-card {
+    margin: 0.5rem 0 1rem 0;
+  }
+
+  .question-card ion-card-content {
+    padding: 1rem;
+  }
+
+  .question-number {
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  .question-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .options-list {
+    margin-bottom: 1rem;
+  }
+
+  .option-item {
+    --min-height: 56px;
+    margin-bottom: 6px;
+  }
+
+  .option-item ion-label {
+    font-size: 0.875rem;
+    margin: 8px 0;
+  }
+
+  .submit-button {
+    margin: 1rem 0 0.5rem 0;
+    min-height: 44px;
+    font-size: 0.9375rem;
+  }
+
+  .progress-text {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Safe Area Support */
+@supports (padding: max(0px)) {
+  .quiz-container {
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .option-item,
+  .submit-button {
+    transition: none;
+  }
+  
+  .option-item:active,
+  .option-item:hover,
+  .submit-button:active,
+  .submit-button:hover {
+    transform: none;
+  }
+}
+
+/* Touch Feedback */
+.option-item:active {
+  opacity: 0.9;
+}

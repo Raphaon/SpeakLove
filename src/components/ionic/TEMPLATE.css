@@ -1,0 +1,204 @@
+/**
+ * CSS Template pour composant Ionic
+ * Renommer en [NomComposant]Ionic.css
+ */
+
+/* ========== CONTENT ========== */
+.template-content {
+  --background: linear-gradient(135deg, #FFF5F7 0%, #FFE4E8 50%, #FFF5F7 100%);
+}
+
+/* ========== PAGE HEADER ========== */
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+/* ========== CARDS ========== */
+.template-card {
+  margin: 1rem 0;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.15);
+}
+
+.template-card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.template-card-content {
+  padding: 1.5rem;
+}
+
+/* ========== BUTTONS ========== */
+.template-button {
+  --border-radius: 1rem;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+  --box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
+  margin: 0.5rem 0;
+}
+
+.template-button-outline {
+  --border-width: 2px;
+  --border-color: #E91E63;
+}
+
+/* ========== FOOTER ========== */
+.template-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  color: #999;
+  margin: 0;
+}
+
+/* ========== UTILITY CLASSES ========== */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 576px) {
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .template-card {
+    margin: 0.75rem 0;
+  }
+
+  .template-card-header,
+  .template-card-content {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .template-content {
+    padding: 2rem;
+  }
+
+  .page-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ========== DARK MODE (optionnel) ========== */
+@media (prefers-color-scheme: dark) {
+  .template-content {
+    --background: #1a1a1a;
+  }
+
+  .page-title {
+    color: #ffffff;
+  }
+
+  .page-subtitle {
+    color: #cccccc;
+  }
+
+  .template-card {
+    --background: #2a2a2a;
+  }
+}

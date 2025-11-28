@@ -1,0 +1,418 @@
+/* Dashboard Ionic - Responsive Design */
+
+/* Scrollbar masquée */
+ion-content.ion-padding::part(scroll) {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+ion-content.ion-padding::part(scroll)::-webkit-scrollbar {
+  display: none;
+}
+
+/* Navigation Cards */
+.nav-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: clamp(120px, 20vw, 140px);
+  cursor: pointer;
+}
+
+.nav-card:active {
+  transform: scale(0.97);
+}
+
+.gradient-primary {
+  background: linear-gradient(135deg, #E91E63 0%, #F06292 100%);
+}
+
+.nav-card ion-card-content {
+  padding: clamp(12px, 3vw, 16px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-card h3 {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  font-weight: 600;
+  margin: 0.5rem 0 0.25rem 0;
+}
+
+.nav-card p {
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
+}
+
+/* Greeting Section */
+.greeting-section {
+  text-align: center;
+  margin-bottom: clamp(1rem, 3vh, 1.5rem);
+  margin-top: clamp(0.5rem, 2vh, 1rem);
+  padding: 0 1rem;
+}
+
+.greeting-section h1 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.greeting-section p {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+  line-height: 1.5;
+}
+
+/* Active Event Banner */
+.event-banner {
+  margin-bottom: 1rem;
+}
+
+.event-banner .event-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.event-banner .event-emoji {
+  font-size: clamp(2rem, 8vw, 2.5rem);
+  flex-shrink: 0;
+}
+
+.event-banner h3 {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin: 0;
+}
+
+.event-banner p {
+  font-size: clamp(0.8125rem, 2.5vw, 0.875rem);
+  margin: 0.25rem 0 0 0;
+  opacity: 0.9;
+}
+
+/* User Progress Card */
+.progress-card {
+  margin-bottom: 1rem;
+}
+
+.progress-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.progress-info span {
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
+}
+
+.progress-info .progress-stats {
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
+}
+
+.streak-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.streak-info span {
+  font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
+}
+
+/* Couple Stats Grid */
+.couple-stats-grid {
+  margin-bottom: 1rem;
+  padding: 0;
+}
+
+.couple-stat-card {
+  cursor: pointer;
+}
+
+.couple-stat-card ion-card-content {
+  text-align: center;
+  padding: clamp(12px, 3vw, 16px);
+}
+
+.couple-stat-card ion-icon {
+  font-size: clamp(28px, 8vw, 36px) !important;
+}
+
+.couple-stat-card h3 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 0.5rem 0;
+}
+
+.couple-stat-card p {
+  font-size: clamp(0.75rem, 2vw, 0.8125rem);
+  margin: 0;
+}
+
+.couple-stat-card .quest-status {
+  font-size: clamp(0.6875rem, 1.8vw, 0.75rem);
+  margin-top: 0.5rem;
+}
+
+/* Main Quiz CTA */
+.quiz-cta {
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.quiz-cta-content {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 3vw, 1rem);
+}
+
+.quiz-cta-icon {
+  width: clamp(48px, 12vw, 64px);
+  height: clamp(48px, 12vw, 64px);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.quiz-cta-icon span {
+  font-size: clamp(1.5rem, 6vw, 2rem);
+}
+
+.quiz-cta-text {
+  flex: 1;
+}
+
+.quiz-cta-text h3 {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  margin: 0 0 0.5rem 0;
+  color: white;
+}
+
+.quiz-cta-text p {
+  font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
+  margin: 0 0 0.75rem 0;
+  opacity: 0.9;
+  color: white;
+  line-height: 1.4;
+}
+
+.quiz-cta-action {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+}
+
+.quiz-cta-action span {
+  font-size: clamp(0.8125rem, 2.2vw, 0.875rem);
+}
+
+/* Navigation Grid */
+.nav-grid {
+  padding: 0 0.5rem;
+}
+
+.nav-grid ion-row {
+  gap: 0.5rem;
+}
+
+.nav-grid ion-col {
+  padding: 0.25rem;
+}
+
+/* Partner Quiz Special Styling */
+.partner-quiz-card {
+  position: relative;
+}
+
+.partner-quiz-card .quiz-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.partner-quiz-card .partner-emoji {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  font-size: 1.5rem;
+}
+
+/* Footer */
+.cute-footer {
+  text-align: center;
+  color: #999;
+  font-size: clamp(0.6875rem, 1.8vw, 0.75rem);
+  margin-top: clamp(2rem, 5vh, 3rem);
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+/* Responsive Adjustments */
+
+/* Extra Small Devices (iPhone SE, small phones) */
+@media (max-width: 375px) {
+  ion-content.ion-padding {
+    --padding-start: 12px;
+    --padding-end: 12px;
+  }
+
+  .nav-card {
+    min-height: 110px;
+  }
+
+  ion-card {
+    margin: 8px;
+  }
+
+  .greeting-section {
+    margin-bottom: 0.75rem;
+  }
+
+  .couple-stats-grid {
+    margin-bottom: 0.75rem;
+  }
+
+  .event-banner .event-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Small Devices (standard phones) */
+@media (min-width: 376px) and (max-width: 576px) {
+  .nav-card {
+    min-height: 120px;
+  }
+}
+
+/* Medium Devices (large phones, small tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .nav-card {
+    min-height: 130px;
+  }
+
+  .couple-stats-grid ion-col {
+    size: 6;
+  }
+}
+
+/* Large Devices (tablets) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  ion-content.ion-padding {
+    --padding-start: 24px;
+    --padding-end: 24px;
+  }
+
+  .nav-grid {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .greeting-section,
+  .event-banner,
+  .progress-card,
+  .quiz-cta,
+  .couple-stats-grid {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra Large Devices (desktop) */
+@media (min-width: 1025px) {
+  ion-content.ion-padding {
+    --padding-start: 32px;
+    --padding-end: 32px;
+  }
+
+  .nav-grid {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .greeting-section,
+  .event-banner,
+  .progress-card,
+  .quiz-cta,
+  .couple-stats-grid {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .nav-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.2);
+  }
+}
+
+/* Landscape Mode */
+@media (max-height: 600px) and (orientation: landscape) {
+  .greeting-section {
+    margin-top: 0.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .greeting-section h1 {
+    font-size: 1.25rem;
+  }
+
+  .nav-card {
+    min-height: 100px;
+  }
+
+  .couple-stat-card ion-icon {
+    font-size: 28px !important;
+  }
+
+  .event-banner {
+    margin-bottom: 0.75rem;
+  }
+
+  ion-card {
+    margin: 8px;
+  }
+
+  .cute-footer {
+    margin-top: 1.5rem;
+  }
+}
+
+/* Safe Area Support */
+@supports (padding: max(0px)) {
+  ion-content.ion-padding {
+    --padding-top: max(16px, env(safe-area-inset-top));
+    --padding-bottom: max(16px, env(safe-area-inset-bottom));
+    --padding-start: max(16px, env(safe-area-inset-left));
+    --padding-end: max(16px, env(safe-area-inset-right));
+  }
+}
+
+/* Touch Feedback */
+.nav-card:active,
+.couple-stat-card:active,
+.quiz-cta:active {
+  opacity: 0.9;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .nav-card,
+  .couple-stat-card,
+  .quiz-cta {
+    transition: none;
+  }
+  
+  .nav-card:active {
+    transform: none;
+  }
+}

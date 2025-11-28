@@ -1,0 +1,11 @@
+.space-y-3 > * + * {
+  margin-top: 0.75rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+ion-input.uppercase {
+  text-transform: uppercase;
+}
